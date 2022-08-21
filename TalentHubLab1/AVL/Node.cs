@@ -8,6 +8,13 @@ namespace TalentHubLab1.AVL
 {
     class Node
     {
-        
+        public Node(Applicant element)
+        {
+            this.element = element;
+        }
+
+        public Applicant element;
+        public Node left;
+        public Node right;
     }
 }
