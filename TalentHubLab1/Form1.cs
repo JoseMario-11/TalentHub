@@ -24,7 +24,8 @@ namespace TalentHubLab1
         OpenFileDialog pathSearcher = new OpenFileDialog();
         FileStream file;
         StreamReader read;
-        AVLclass AVL = new AVLclass();
+        StreamWriter writer;
+        public AVLclass AVL = new AVLclass();
         
        
         // Function dedicated to convert a string into json format  
@@ -74,6 +75,58 @@ namespace TalentHubLab1
                 read = new StreamReader(file);
                 JsonConverter(read);
                 file.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                richTextBox1.Clear();
+                AVL.NodeList.Clear();
+                string name = textBox2.Text;
+                AVL.InorderSearch(AVL.Root, name);
+
+                if (AVL.NodeList.Count != 0)
+                {
+                    foreach(Applicant a in AVL.NodeList)
+                    {
+                        //serialization
+                        string line = JsonConvert.SerializeObject(a);
+                        richTextBox1.Text += line + Environment.NewLine;
+                    }
+                }
+                else
+                    richTextBox1.Text = "There are no applicants with the name given";
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richTextBox1.Text))
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "archivo Json|*.json";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    file.Close();
+                    file = new FileStream(save.FileName, FileMode.Create, FileAccess.Write);
+                    writer = new StreamWriter(file, Encoding.UTF8);
+                    // File.WriteAllLines(save.FileName, richTextBox1.Lines);
+
+                    //writer.Write(richTextBox1.Text);
+
+                    
+                    for (int i = 0; i < richTextBox1.Lines.Length; i++)
+                    {
+                        if (!string.IsNullOrEmpty( richTextBox1.Lines[i]))
+                            writer.WriteLine(richTextBox1.Lines[i].Trim());
+                    }
+                    writer.Close();
+                    file.Close();
+
+                }
             }
         }
     }

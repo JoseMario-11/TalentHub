@@ -130,8 +130,6 @@ namespace UnitTests
             testAVL.Delete(testAVL.Root, test3);
 
             //Assert
-
-            
             Assert.IsTrue(testAVL.Root.element.DPI == "5" && testAVL.Root.right.element.DPI == "7" && testAVL.Root.left.element.DPI == "1" && testAVL.nodeCount == 3);
         }
     }
