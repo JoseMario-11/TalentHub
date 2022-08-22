@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TalentHubLab1.AVL
 {
-    class Node
+    public class Node
     {
         public Node(Applicant element)
         {

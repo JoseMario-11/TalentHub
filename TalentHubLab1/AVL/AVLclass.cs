@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TalentHubLab1.AVL
 {
-    class AVLclass<T>
+    public class AVLclass
     {
         public AVLclass()
         {
@@ -14,13 +14,13 @@ namespace TalentHubLab1.AVL
             nodeCount = 0;
         }
 
-        Node Root;
-        int nodeCount;
+        public Node Root;
+        public int nodeCount;
 
         public Node Insert(Node root, Applicant element)
         {
             
-            if (Root == null)
+            if (root == null)
             {
                 Node node = new Node(element);
                 nodeCount++;
@@ -33,6 +33,37 @@ namespace TalentHubLab1.AVL
                 root.right = Insert(root.right, element);
 
             //balance factor 
+            int balance = calculateFactor(root);
+
+            if (balance > 1)
+            {
+                if (string.Compare(root.left.element.DPI, element.DPI) == 1)
+                {
+                    //single right rotation
+                    return RightRotation(root);
+                }
+                else if (string.Compare(root.left.element.DPI, element.DPI) == -1)
+                {
+                    //double roght rotation
+                    root.left = LeftRotation(root.left);
+                    return RightRotation(root);
+                }
+            }
+
+            if (balance < -1)
+            {
+                if (string.Compare(root.right.element.DPI, element.DPI) == -1)
+                {
+                    //single left rotation
+                    return LeftRotation(root);
+                }
+                else if (string.Compare(root.right.element.DPI, element.DPI) == 1)
+                {
+                    //double left rotation
+                    root.right = RightRotation(root.right);
+                    return LeftRotation(root);
+                }
+            }
 
             return root;
         }
@@ -58,7 +89,25 @@ namespace TalentHubLab1.AVL
             return (HeightRight > heightLeft) ? HeightRight + 1 : heightLeft + 1;
         }
 
-        
+        public Node RightRotation(Node node)
+        {
+            Node newRoot = node.left;
+            Node rightAux = newRoot.right;
+            newRoot.right = node;
+            node.left = rightAux;
+
+            return newRoot;
+        }
+
+        public Node LeftRotation(Node node)
+        {
+            Node newRoot = node.right;
+            Node leftAux = newRoot.left;
+            newRoot.left = node;
+            node.right = leftAux;
+
+            return newRoot;
+        }
 
     }
 }

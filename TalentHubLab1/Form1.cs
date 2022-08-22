@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using TalentHubLab1.AVL;
 
 namespace TalentHubLab1
 {
@@ -23,8 +24,8 @@ namespace TalentHubLab1
         OpenFileDialog pathSearcher = new OpenFileDialog();
         FileStream file;
         StreamReader read;
-
-
+        AVLclass AVL = new AVLclass();
+        
        
         // Function dedicated to convert a string into json format  
         public void JsonConverter(StreamReader file)
@@ -43,9 +44,11 @@ namespace TalentHubLab1
                     Applicant applicant = JsonConvert.DeserializeObject<Applicant>(instructions[1]);
 
                     //the first position of the array indicates what kind of operation the AVL needs to do to generate its structure
-                    switch (instructions[0])
+                  
+                    switch (instructions[0].ToLower())
                     {
                         case "insert":
+                            AVL.Root = AVL.Insert(AVL.Root, applicant);
                             break;
                         case "patch":
                             break;
@@ -55,6 +58,8 @@ namespace TalentHubLab1
 
                 }
             }
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
