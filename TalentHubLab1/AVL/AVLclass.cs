@@ -109,5 +109,122 @@ namespace TalentHubLab1.AVL
             return newRoot;
         }
 
+
+        public void Edit(Node root, Applicant applicant)
+        {
+            if (root.element.DPI == applicant.DPI)
+            {
+                //element finded
+                root.element.Address = applicant.Address;
+                root.element.DateBirth = applicant.DateBirth;
+
+            }
+            else if (string.Compare(root.element.DPI, applicant.DPI) == 1 && root.left != null)
+            {
+                Edit(root.left, applicant);
+            }
+            else if (string.Compare(root.element.DPI, applicant.DPI) == -1 && root.right != null)
+            {
+                Edit(root.right, applicant);
+            }
+        }
+
+        
+
+
+        public Node Delete(Node root, Applicant applicant)
+        {
+            if (root == null)
+            {
+                return root;
+            }
+
+            if (string.Compare(root.element.DPI, applicant.DPI) == -1)
+            {
+                root.right = Delete(root.right, applicant);
+            }
+            else if (string.Compare(root.element.DPI, applicant.DPI) == 1)
+            {
+                root.left = Delete(root.left, applicant);
+            }
+            else
+            {
+                // element to delete found
+                //case leaf
+                if (root.isLeaf())
+                {
+                    root = null;
+                    nodeCount--;
+                }
+                else
+                {
+                    //case only one child
+                    if (root.left == null || root.right == null)
+                    {
+                        Node aux = (root.left != null) ? root.left : root.right;
+                        if (aux != null)
+                        {
+                            root = aux;
+                            nodeCount--;
+                            aux = null;
+                        }
+                    }
+                    else
+                    {
+                        Node aux = minValueNode(root.right);
+                        root.element = aux.element;
+                        
+                        root.right = Delete(root.right, aux.element);
+                    }
+                    
+                }
+            }
+
+            int balance = calculateFactor(root);
+
+            if (balance > 1)
+            {
+                if (string.Compare(root.left.element.DPI, applicant.DPI) == 1)
+                {
+                    //single right rotation
+                    return RightRotation(root);
+                }
+                else if (string.Compare(root.left.element.DPI, applicant.DPI) == -1)
+                {
+                    //double roght rotation
+                    root.left = LeftRotation(root.left);
+                    return RightRotation(root);
+                }
+            }
+
+            if (balance < -1)
+            {
+                if (string.Compare(root.right.element.DPI, applicant.DPI) == -1)
+                {
+                    //single left rotation
+                    return LeftRotation(root);
+                }
+                else if (string.Compare(root.right.element.DPI, applicant.DPI) == 1)
+                {
+                    //double left rotation
+                    root.right = RightRotation(root.right);
+                    return LeftRotation(root);
+                }
+            }
+
+
+            return root;
+        }
+
+        public Node minValueNode(Node root)
+        {
+            Node aux = root;
+            while (aux.left != null)
+            {
+                aux = aux.left;
+            }
+            return aux;
+        }
+
     }
 }

@@ -51,9 +51,10 @@ namespace TalentHubLab1
                             AVL.Root = AVL.Insert(AVL.Root, applicant);
                             break;
                         case "patch":
-
+                            AVL.Edit(AVL.Root, applicant);
                             break;
                         case "delete":
+                            AVL.Delete(AVL.Root, applicant);
                             break;
                     }
 

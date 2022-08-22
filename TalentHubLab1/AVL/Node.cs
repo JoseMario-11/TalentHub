@@ -13,6 +13,11 @@ namespace TalentHubLab1.AVL
             this.element = element;
         }
 
+        public bool isLeaf()
+        {
+            return (left == null && right == null) ? true : false;
+        }
+
         public Applicant element;
         public Node left;
         public Node right;

@@ -15,7 +15,7 @@ namespace UnitTests
         Applicant test = new Applicant()
         {
             Name = "Mario",
-            DPI = "13245653476121",
+            DPI = "1",
             DateBirth = "21-12-1990",
             Address = "Guatemala"
         };
@@ -23,7 +23,7 @@ namespace UnitTests
         Applicant test2 = new Applicant()
         {
             Name = "Juan",
-            DPI = "52452345234524",
+            DPI = "5",
             DateBirth = "23-04-2001",
             Address = "Guatemala"
         };
@@ -31,7 +31,15 @@ namespace UnitTests
         Applicant test3 = new Applicant()
         {
             Name = "Roberto",
-            DPI = "2345322543222455",
+            DPI = "2",
+            DateBirth = "11-04-2000",
+            Address = "Guatemala"
+        };
+
+        Applicant test4 = new Applicant()
+        {
+            Name = "Pedro",
+            DPI = "7",
             DateBirth = "11-04-2002",
             Address = "Guatemala"
         };
@@ -83,6 +91,48 @@ namespace UnitTests
             //validates that all the nodes in the tree have a balance factor equals to 0 after the right rotation
             Assert.IsTrue(testAVL.calculateFactor(testAVL.Root) == 0 && testAVL.calculateFactor(testAVL.Root.left) == 0 && testAVL.calculateFactor(testAVL.Root.right) == 0 && testAVL.nodeCount == 3);
 
+        }
+
+        [TestMethod]
+
+        public void AVLedit_test()
+        {
+            //Act
+            testAVL.Root = testAVL.Insert(testAVL.Root, test);  //Root
+            testAVL.Root = testAVL.Insert(testAVL.Root, test3); //Right child of Root 
+
+
+            //changes in Right child of Root
+            test3.Address = "Japan";
+            test3.DateBirth = "24-12-2002";
+
+            testAVL.Edit(testAVL.Root, test3);
+
+
+            //Assert
+            //Changes made in test3 are expected to be notice
+
+            Assert.AreEqual("Japan", testAVL.Root.right.element.Address);
+            Assert.AreEqual("24-12-2002", testAVL.Root.right.element.DateBirth);
+        }
+
+        [TestMethod]
+        public void AVLdelete_test()
+        {
+            //Act
+            testAVL.Root = testAVL.Insert(testAVL.Root, test);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test2);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test3);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test4);
+
+            
+
+            testAVL.Delete(testAVL.Root, test3);
+
+            //Assert
+
+            
+            Assert.IsTrue(testAVL.Root.element.DPI == "5" && testAVL.Root.right.element.DPI == "7" && testAVL.Root.left.element.DPI == "1" && testAVL.nodeCount == 3);
         }
     }
 }
