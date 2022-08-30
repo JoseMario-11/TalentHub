@@ -1,0 +1,17 @@
+Recomendaciones para la directora de recursos humanos para poder buscar por nombre y apellido:
+
+- Los registros deben de contener el apellido del aplicante en lugar de solo utilizar el nombre.
+- Los registros agregados que no poseen un apellido deberían de ser modificados para que se pueda realizar la búsqueda tanto con
+  nombre como apellido.
+- Pueden existir varios registros con un mismo nombre, por lo que buscar al mismo tiempo por nombre y apellido puede incrementar
+  la eficiencia de la búsqueda y reducir el campo de posibles registros.
+
+Recomendaciones para mejorar la estructura de datos en base a los campos de nombre y apellido
+
+- Agregar un campo extra a cada registro que se llame "Lastname" para diferenciarlo del nombre y tener un mejor orden de objeto.
+- Modificar la estructura de tal manera que buscar a todos los aplicantes con un mismo nombre sea más sencillo (crear por cada nodo una
+  lista enlazada que contenga a todos los otros registros con el mismo nombre, de esa forma al buscar a "Juan" se garantiza que en un único
+  nodo está el Juan que se desea encontrar).
+- Adaptar el AVL para que pueda insertar elementos y ordenarlos según los nombres y apellidos y no solo con el DPI, sería más
+  recomendable mantener la estructura como está actualmente, pero crear un método que permita ordenar con esos campos puede 
+  reducir el tamaño del árbol (al mezclar esta recomendación con la anterior).
