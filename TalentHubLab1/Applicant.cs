@@ -14,7 +14,8 @@ namespace TalentHubLab1
         public string DPI { get; set; }
         public string DateBirth { get; set; }
         public string Address { get; set; }
+        public string[] Companies { get; set; }
 
-
+        Dictionary<string, string> CompanyDPI;
     }
 }

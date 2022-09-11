@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using TalentHubLab1.AVL;
+using TalentHubLab1.Huffman;
 
 namespace TalentHubLab1
 {
