@@ -133,90 +133,7 @@ namespace TalentHubLab1.AVL
 
         
 
-        /*
-        public Node Delete(Node root, Applicant applicant)
-        {
-            if (root == null)
-            {
-                return root;
-            }
-
-            if (string.Compare(root.element.DPI, applicant.DPI) == -1)
-            {
-                root.right = Delete(root.right, applicant);
-            }
-            else if (string.Compare(root.element.DPI, applicant.DPI) == 1)
-            {
-                root.left = Delete(root.left, applicant);
-            }
-            else
-            {
-                // element to delete found
-                //case leaf
-                if (root.isLeaf())
-                {
-                    root = null;
-                    nodeCount--;
-                }
-                else
-                {
-                    //case only one child
-                    if (root.left == null || root.right == null)
-                    {
-                        Node aux = (root.left != null) ? root.left : root.right;
-                        if (aux != null)
-                        {
-                            root = aux;
-                            nodeCount--;
-                            aux = null;
-                        }
-                    }
-                    else
-                    {
-                        Node aux = minValueNode(root.right);
-                        root.element = aux.element;
-                        
-                        root.right = Delete(root.right, aux.element);
-                    }
-                    
-                }
-            }
-
-            int balance = calculateFactor(root);
-
-            if (balance > 1)
-            {
-                if (string.Compare(root.left.element.DPI, applicant.DPI) == 1)
-                {
-                    //single right rotation
-                    return RightRotation(root);
-                }
-                else if (string.Compare(root.left.element.DPI, applicant.DPI) == -1)
-                {
-                    //double roght rotation
-                    root.left = LeftRotation(root.left);
-                    return RightRotation(root);
-                }
-            }
-
-            if (balance < -1)
-            {
-                if (string.Compare(root.right.element.DPI, applicant.DPI) == -1)
-                {
-                    //single left rotation
-                    return LeftRotation(root);
-                }
-                else if (string.Compare(root.right.element.DPI, applicant.DPI) == 1)
-                {
-                    //double left rotation
-                    root.right = RightRotation(root.right);
-                    return LeftRotation(root);
-                }
-            }
-
-
-            return root;
-        }*/
+       
 
         public Node Delete(Node root, Applicant applicant)
         {
@@ -322,6 +239,26 @@ namespace TalentHubLab1.AVL
                 NodeList.Add(root.element);
             }
             InorderSearch(root.right, name);
+        }
+
+        public Applicant SearchByDPI(Node root,  string DPI)
+        {
+            if (root != null && string.Compare(root.element.DPI, DPI) == 0)
+            {
+                return root.element;
+            }
+            else if (root != null)
+            {
+                if (string.Compare(root.element.DPI, DPI) == 1)
+                {
+                    return SearchByDPI(root.left, DPI);
+                }
+                else
+                {
+                    return SearchByDPI(root.right, DPI);
+                }
+            }
+            return null;
         }
     }
 }

@@ -76,6 +76,7 @@ namespace TalentHubLab1
                 read = new StreamReader(file);
                 JsonConverter(read);
                 file.Close();
+                button4.Enabled = true;
             }
         }
 
@@ -86,7 +87,7 @@ namespace TalentHubLab1
                 richTextBox1.Clear();
                 AVL.NodeList.Clear();
                 string name = textBox2.Text;
-                AVL.InorderSearch(AVL.Root, name);
+                AVL.InorderSearch(AVL.Root, name.ToLower());
 
                 if (AVL.NodeList.Count != 0)
                 {
@@ -128,6 +129,23 @@ namespace TalentHubLab1
                     file.Close();
 
                 }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox3.Text))
+            {             
+                string DPI = textBox3.Text;
+                Applicant SearchedApplicant = AVL.SearchByDPI(AVL.Root, DPI);
+
+                if (SearchedApplicant != null)  
+                {
+                    textBox4.Text += $"{SearchedApplicant.Name}         {SearchedApplicant.DateBirth}         {SearchedApplicant.Address}";
+                }
+                else
+                    textBox4.Text = "";
+
             }
         }
     }

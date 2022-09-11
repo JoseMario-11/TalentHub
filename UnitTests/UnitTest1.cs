@@ -134,7 +134,26 @@ namespace UnitTests
             Assert.IsTrue(testAVL.Root.element.DPI == "5" && testAVL.Root.right.element.DPI == "7" && testAVL.Root.left.element.DPI == "1");
         }
 
-        
+        [TestMethod]
+        public void AVLsearchByDPI_test()
+        {
+            //act
+            testAVL.Root = testAVL.Insert(testAVL.Root, test);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test2);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test3);
+            testAVL.Root = testAVL.Insert(testAVL.Root, test4);
+
+
+            Applicant search = testAVL.SearchByDPI(testAVL.Root, "7");
+            Applicant search2 = testAVL.SearchByDPI(testAVL.Root, "5");
+
+            //assert
+            Assert.IsTrue(search.Name == "Pedro" && search.DPI == "7");
+            Assert.IsTrue(search2.Name == "Juan" && search2.DPI == "5");
+            Assert.IsTrue(testAVL.SearchByDPI(testAVL.Root, "13") == null);
+        }
+
+
         [TestMethod]
         public void HuffmanTreeCreation_test()
         {
