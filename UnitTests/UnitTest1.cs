@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using TalentHubLab1.AVL;
 using TalentHubLab1;
+using TalentHubLab1.Huffman;
 
 namespace UnitTests
 {
@@ -130,7 +131,27 @@ namespace UnitTests
             testAVL.Delete(testAVL.Root, test3);
 
             //Assert
-            Assert.IsTrue(testAVL.Root.element.DPI == "5" && testAVL.Root.right.element.DPI == "7" && testAVL.Root.left.element.DPI == "1" && testAVL.nodeCount == 3);
+            Assert.IsTrue(testAVL.Root.element.DPI == "5" && testAVL.Root.right.element.DPI == "7" && testAVL.Root.left.element.DPI == "1");
         }
+
+        
+        [TestMethod]
+        public void HuffmanTreeCreation_test()
+        {
+            //arrange
+            string text = "hello world";
+            HuffmanTree tree = new HuffmanTree();
+
+
+            //act
+            tree.CreateTree(text.Replace(" ", "").ToLower());
+
+
+            //assert
+
+            Assert.IsTrue(tree.Root.Frequency == 10);
+            Assert.IsTrue(tree.DPIcodificated == "000001101011101011101110110");
+        }
+
     }
 }

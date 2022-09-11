@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TalentHubLab1.Huffman
 {
-    class HuffmanNode
+    public class HuffmanNode
     {
         public  char Character { get; set; }
         public int Frequency { get; set; }
         public int TypeOfNode { get; set; } // 1 = leaf node || 0 = father node
 
-        HuffmanNode Right;
+        public HuffmanNode Right;
         
-        HuffmanNode Left;
+        public HuffmanNode Left;
 
         public HuffmanNode(int Frequency) //father node constructor
         {

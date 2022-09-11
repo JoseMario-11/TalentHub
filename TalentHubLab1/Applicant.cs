@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using TalentHubLab1.Huffman;
 
 namespace TalentHubLab1
 {
@@ -16,6 +17,6 @@ namespace TalentHubLab1
         public string Address { get; set; }
         public string[] Companies { get; set; }
 
-        Dictionary<string, string> CompanyDPI;
+        Dictionary<string, HuffmanTree> CompanyApplicantInfo;
     }
 }
