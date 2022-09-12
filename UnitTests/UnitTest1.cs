@@ -170,6 +170,8 @@ namespace UnitTests
 
             Assert.IsTrue(tree.Root.Frequency == 10);
             Assert.IsTrue(tree.DPIcodificated == "000001101011101011101110110");
+
+            Assert.IsTrue(tree.DecodeText(tree.DPIcodificated) == "helloworld");
         }
 
     }

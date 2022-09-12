@@ -128,5 +128,46 @@ namespace TalentHubLab1.Huffman
             }
         }
 
+        public string DecodeText(string company)
+        {
+            string codificationAux = DPIcodificated;
+            string output = "";
+
+            while (codificationAux != "")
+            {
+                
+                getCharacter(Root, ref codificationAux, ref output);
+            }
+
+            return output;
+        }
+
+        private void getCharacter(HuffmanNode node, ref string text, ref string output)
+        {
+           
+            if (node.TypeOfNode == 1)
+            {
+                output += node.Character;
+                return;
+            }
+            else if (text != "")
+            {
+                if (text[0] == '0')
+                {
+                    text = text.Remove(0,1);
+                    getCharacter(node.Left, ref text, ref output);
+                    return;
+                }
+                if (text[0] == '1')
+                {
+                    text = text.Remove(0,1);
+                    getCharacter(node.Right, ref text, ref output);
+                    return;
+                }
+            }
+
+           
+        }
+
     }
 }

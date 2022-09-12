@@ -132,20 +132,31 @@ namespace TalentHubLab1
             }
         }
 
+        public Applicant SearchedApplicant;
         private void button4_Click(object sender, EventArgs e)
         {
+            
             if (!string.IsNullOrWhiteSpace(textBox3.Text))
             {             
                 string DPI = textBox3.Text;
-                Applicant SearchedApplicant = AVL.SearchByDPI(AVL.Root, DPI);
+                SearchedApplicant = AVL.SearchByDPI(AVL.Root, DPI);
 
                 if (SearchedApplicant != null)  
                 {
-                    textBox4.Text += $"{SearchedApplicant.Name}         {SearchedApplicant.DateBirth}         {SearchedApplicant.Address}";
+                    textBox4.Text = $"{SearchedApplicant.Name}     -    {SearchedApplicant.DateBirth}    -     {SearchedApplicant.Address}";
                 }
                 else
                     textBox4.Text = "";
 
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (textBox4.Text != "")
+            {
+                Form2 f2 = new Form2(ref SearchedApplicant);
+                f2.Show();
             }
         }
     }
