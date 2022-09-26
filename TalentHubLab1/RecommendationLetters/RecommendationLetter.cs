@@ -52,30 +52,6 @@ namespace TalentHubLab1.RecommendationLetters
             }
         }
 
-        /*
-        public string Decode(int index)
-        {
-            Code code = EncodingDictionary[index];
-
-            if (code.index == 0)
-            {
-                //return code.character + "" + Decode(index + 1);
-                return code.character + "";
-            }
-            else
-            {
-                if (code.character != '~')
-                {
-                    //return Decode(index + 1) + code.character;
-                    return Decode(code.index) + code.character;
-                }
-                else
-                {
-                    //return Decode(index + 1);
-                    return Decode(code.index);
-                }
-            }
-        }*/
 
         public string Decode(int index)
         {
