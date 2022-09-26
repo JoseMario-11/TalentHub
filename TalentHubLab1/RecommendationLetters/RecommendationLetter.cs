@@ -52,26 +52,55 @@ namespace TalentHubLab1.RecommendationLetters
             }
         }
 
+        /*
         public string Decode(int index)
         {
             Code code = EncodingDictionary[index];
+
             if (code.index == 0)
             {
+                //return code.character + "" + Decode(index + 1);
                 return code.character + "";
             }
             else
             {
                 if (code.character != '~')
                 {
-                    return Decode(index++) + code.character;
+                    //return Decode(index + 1) + code.character;
+                    return Decode(code.index) + code.character;
                 }
                 else
                 {
-                    return Decode(index++);
+                    //return Decode(index + 1);
+                    return Decode(code.index);
                 }
             }
+        }*/
+
+        public string Decode(int index)
+        {
+            string output = "";
+            for (int i = 0; i <EncodingDictionary.Keys.Count; i++)
+            {
+                Code code = EncodingDictionary[i + 1];
+                output += getSequence(code);
+            }
+
+            return output;
         }
 
+        public string getSequence(Code code)
+        {
+            if (code.index == 0)
+                return code.character + "";
+            else
+            {
+                if (code.character == '~')
+                    return getSequence(EncodingDictionary[code.index]);
+               else
+                    return getSequence(EncodingDictionary[code.index]) + code.character;
+            } 
+        }
 
         public bool SearchEntryKey(string substring)
         {
