@@ -46,9 +46,10 @@ namespace TalentHubLab1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(172, 54);
+            this.button1.Location = new System.Drawing.Point(229, 66);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(349, 35);
+            this.button1.Size = new System.Drawing.Size(465, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "Open file (CSV)";
             this.button1.UseVisualStyleBackColor = true;
@@ -56,33 +57,37 @@ namespace TalentHubLab1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 95);
+            this.textBox1.Location = new System.Drawing.Point(229, 117);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(349, 20);
+            this.textBox1.Size = new System.Drawing.Size(464, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 128);
+            this.label1.Location = new System.Drawing.Point(409, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "File path";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 423);
+            this.textBox2.Location = new System.Drawing.Point(101, 521);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(254, 20);
+            this.textBox2.Size = new System.Drawing.Size(337, 22);
             this.textBox2.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(356, 409);
+            this.button2.Location = new System.Drawing.Point(475, 503);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(254, 46);
+            this.button2.Size = new System.Drawing.Size(339, 57);
             this.button2.TabIndex = 4;
             this.button2.Text = "Search applicants";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,27 +96,30 @@ namespace TalentHubLab1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 446);
+            this.label2.Location = new System.Drawing.Point(212, 549);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Type name";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(28, 477);
+            this.richTextBox1.Location = new System.Drawing.Point(37, 587);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(630, 77);
+            this.richTextBox1.Size = new System.Drawing.Size(839, 94);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             this.richTextBox1.WordWrap = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(28, 560);
+            this.button3.Location = new System.Drawing.Point(37, 689);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(630, 40);
+            this.button3.Size = new System.Drawing.Size(840, 49);
             this.button3.TabIndex = 7;
             this.button3.Text = "Export file";
             this.button3.UseVisualStyleBackColor = true;
@@ -120,9 +128,10 @@ namespace TalentHubLab1
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(347, 202);
+            this.button4.Location = new System.Drawing.Point(463, 249);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(263, 42);
+            this.button4.Size = new System.Drawing.Size(351, 52);
             this.button4.TabIndex = 8;
             this.button4.Text = "Search with DPI";
             this.button4.UseVisualStyleBackColor = true;
@@ -130,33 +139,37 @@ namespace TalentHubLab1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 214);
+            this.textBox3.Location = new System.Drawing.Point(101, 263);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(254, 20);
+            this.textBox3.Size = new System.Drawing.Size(337, 22);
             this.textBox3.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(139, 237);
+            this.label3.Location = new System.Drawing.Point(185, 292);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 15);
+            this.label3.Size = new System.Drawing.Size(137, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Type applicant\'s DPI";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(76, 267);
+            this.textBox4.Location = new System.Drawing.Point(101, 329);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(534, 20);
+            this.textBox4.Size = new System.Drawing.Size(711, 22);
             this.textBox4.TabIndex = 11;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(76, 293);
+            this.button5.Location = new System.Drawing.Point(101, 361);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(534, 37);
+            this.button5.Size = new System.Drawing.Size(712, 46);
             this.button5.TabIndex = 12;
             this.button5.Text = "More information of application process";
             this.button5.UseVisualStyleBackColor = true;
@@ -164,9 +177,10 @@ namespace TalentHubLab1
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 615);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(951, 757);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
@@ -180,6 +194,7 @@ namespace TalentHubLab1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

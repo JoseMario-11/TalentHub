@@ -4,6 +4,7 @@ using System.IO;
 using TalentHubLab1.AVL;
 using TalentHubLab1;
 using TalentHubLab1.Huffman;
+using TalentHubLab1.RecommendationLetters;
 
 namespace UnitTests
 {
@@ -172,6 +173,45 @@ namespace UnitTests
             Assert.IsTrue(tree.DPIcodificated == "000001101011101011101110110");
 
             Assert.IsTrue(tree.DecodeText(tree.DPIcodificated) == "helloworld");
+        }
+
+        [TestMethod]
+
+        public void LZ78Encoding_test()
+        {
+            //arrange
+            RecommendationLetter letter = new RecommendationLetter("ABRACADRABRARAAAA");
+            
+            //act
+            letter.Encoding();
+
+            //assert
+            Assert.IsTrue(letter.EntryDictionary.Keys.Count == 10);
+            Assert.IsTrue(letter.EncodingDictionary[10].character == '~');
+            Assert.IsTrue(letter.EntryDictionary["ad"] == 5);
+        }
+
+
+        [TestMethod]
+
+        public void LZ78Decode_test()
+        {
+            //arrange
+            string text = "ABRACADRABRARAAAA";
+            string text2 = "HeLlo WoRlD";
+
+            RecommendationLetter letter = new RecommendationLetter(text);
+            RecommendationLetter letter2 = new RecommendationLetter(text2);
+            letter.Encoding();
+            letter2.Encoding();
+
+            //act
+            string decodeText = letter.Decode(1);
+            string decodeText2 = letter2.Decode(1);
+
+            //assert
+            Assert.IsTrue(decodeText.ToUpper() == text);
+            Assert.IsTrue(decodeText2 == text2.ToLower());
         }
 
     }

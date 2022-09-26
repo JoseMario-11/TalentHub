@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TalentHubLab1.Huffman;
 
+
 namespace TalentHubLab1
 {
     public class Applicant
@@ -20,5 +21,7 @@ namespace TalentHubLab1
         [NonSerialized]
 
         public Dictionary<string, HuffmanTree> CompanyApplicantInfo = new Dictionary<string, HuffmanTree>();
+
+        
     }
 }
