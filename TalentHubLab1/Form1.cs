@@ -159,5 +159,14 @@ namespace TalentHubLab1
                 f2.Show();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox4.Text != "")
+            {
+                Form3 f3 = new Form3(ref SearchedApplicant);
+                f3.Show();
+            }
+        }
     }
 }
