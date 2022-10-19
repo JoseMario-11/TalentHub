@@ -43,11 +43,12 @@ namespace TalentHubLab1
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(229, 32);
+            this.button1.Location = new System.Drawing.Point(246, 13);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(465, 43);
@@ -58,7 +59,7 @@ namespace TalentHubLab1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 83);
+            this.textBox1.Location = new System.Drawing.Point(246, 64);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -68,16 +69,16 @@ namespace TalentHubLab1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(409, 124);
+            this.label1.Location = new System.Drawing.Point(426, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "File path";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 463);
+            this.textBox2.Location = new System.Drawing.Point(108, 438);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(337, 22);
@@ -85,7 +86,7 @@ namespace TalentHubLab1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(473, 445);
+            this.button2.Location = new System.Drawing.Point(482, 420);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(339, 57);
@@ -97,16 +98,16 @@ namespace TalentHubLab1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 491);
+            this.label2.Location = new System.Drawing.Point(219, 466);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Type name";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(37, 535);
+            this.richTextBox1.Location = new System.Drawing.Point(46, 510);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -129,7 +130,7 @@ namespace TalentHubLab1
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(461, 183);
+            this.button4.Location = new System.Drawing.Point(461, 142);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(351, 52);
@@ -140,7 +141,7 @@ namespace TalentHubLab1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 197);
+            this.textBox3.Location = new System.Drawing.Point(99, 156);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(337, 22);
@@ -149,16 +150,16 @@ namespace TalentHubLab1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(183, 226);
+            this.label3.Location = new System.Drawing.Point(183, 185);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 17);
+            this.label3.Size = new System.Drawing.Size(132, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Type applicant\'s DPI";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 263);
+            this.textBox4.Location = new System.Drawing.Point(99, 222);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -167,7 +168,7 @@ namespace TalentHubLab1
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(99, 295);
+            this.button5.Location = new System.Drawing.Point(99, 254);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(355, 46);
@@ -178,7 +179,7 @@ namespace TalentHubLab1
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(461, 295);
+            this.button6.Location = new System.Drawing.Point(461, 254);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(349, 46);
             this.button6.TabIndex = 13;
@@ -186,12 +187,23 @@ namespace TalentHubLab1
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(461, 306);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(351, 40);
+            this.button7.TabIndex = 14;
+            this.button7.Text = "Applicant conversations";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 734);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox4);
@@ -230,6 +242,7 @@ namespace TalentHubLab1
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
