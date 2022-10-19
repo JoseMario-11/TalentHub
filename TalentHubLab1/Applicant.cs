@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TalentHubLab1.Huffman;
 using TalentHubLab1.RecommendationLetters;
+using TalentHubLab1.Conversations;
 
 namespace TalentHubLab1
 {
@@ -25,5 +26,13 @@ namespace TalentHubLab1
         [NonSerialized]
 
         public Dictionary<int, RecommendationLetter> RecommendationLettersInfo = new Dictionary<int, RecommendationLetter>();
+        
+        [NonSerialized]
+
+        public Dictionary<int, Conversation> ConversationsInfo = new Dictionary<int, Conversation>();
+
+        [NonSerialized]
+
+        public string EncryptPassword = "";
     }
 }

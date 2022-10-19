@@ -45,7 +45,7 @@ namespace TalentHubLab1
                 bool hasLetter = false;
                 foreach (string fileName in fileEntries)
                 {
-                    if (fileName.Contains(applicant.DPI))
+                    if (fileName.Contains(applicant.DPI) && fileName.Contains("REC"))
                     {
                         hasLetter = true;
                         applicantFiles.Add(fileName);
@@ -62,7 +62,7 @@ namespace TalentHubLab1
                 else
                 {
                     richTextBox1.Text = $"Sorry, {applicant.Name} does not have recommendation letters";
-                    richTextBox2.Text = $"Sorry, {applicant.Name} does not have recommendation letters";
+                    
                 }
             }
         }
