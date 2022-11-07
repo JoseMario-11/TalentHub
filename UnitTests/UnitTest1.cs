@@ -5,6 +5,8 @@ using TalentHubLab1.AVL;
 using TalentHubLab1;
 using TalentHubLab1.Huffman;
 using TalentHubLab1.RecommendationLetters;
+using TalentHubLab1.Helpers;
+using System.Numerics;
 
 namespace UnitTests
 {
@@ -212,6 +214,15 @@ namespace UnitTests
             //assert
             Assert.IsTrue(decodeText.ToUpper() == text);
             Assert.IsTrue(decodeText2 == text2.ToLower());
+        }
+
+
+        [TestMethod]
+
+        public void RSA_Encryption_test()
+        {
+            BigInteger result = RSA.Encryption(7, new BigInteger[] { 21, 4 });
+            Assert.IsTrue(result == 7);
         }
 
     }

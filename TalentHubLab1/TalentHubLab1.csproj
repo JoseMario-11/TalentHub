@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +81,9 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Company.cs" />
+    <Compile Include="Helpers\Recluiters.cs" />
+    <Compile Include="Helpers\RSA.cs" />
     <Compile Include="Huffman\HuffmanNode.cs" />
     <Compile Include="Huffman\HuffmanTree.cs" />
     <Compile Include="Program.cs" />

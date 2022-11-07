@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.IO;
 using TalentHubLab1.AVL;
 using TalentHubLab1.Huffman;
+using TalentHubLab1.Helpers;
+using System.Numerics;
 
 namespace TalentHubLab1
 {
@@ -27,6 +29,7 @@ namespace TalentHubLab1
         StreamReader read;
         StreamWriter writer;
         public AVLclass AVL = new AVLclass();
+        public Recluiters Rec = new Recluiters();
         
        
         // Function dedicated to convert a string into json format  
@@ -75,6 +78,15 @@ namespace TalentHubLab1
                 file = new FileStream(pathSearcher.FileName, FileMode.OpenOrCreate);
                 read = new StreamReader(file);
                 JsonConverter(read);
+                AVL.getAll(AVL.Root);
+                
+                Rec.InsertInfo(AVL.AllApplicantList);
+                
+                foreach (string recluiter in Rec.Dict.Keys)
+                {
+                    comboBox1.Items.Add(recluiter);
+                }
+
                 file.Close();
                 button4.Enabled = true;
             }
@@ -176,6 +188,47 @@ namespace TalentHubLab1
                 Form4 f4 = new Form4(ref SearchedApplicant);
                 f4.Show();
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string RecluiterName = comboBox1.Text;
+                string CompanyName = comboBox2.Text;
+                string keyword = textBox5.Text;
+                BigInteger encryptedData = RSA.Encryption(Convert.ToInt64(keyword), Rec.DictKeys[RecluiterName][Rec.Dict[RecluiterName].IndexOf(CompanyName)].PublicKey);
+                BigInteger decryptedData = RSA.Decryption(encryptedData, Rec.DictKeys[RecluiterName][Rec.Dict[RecluiterName].IndexOf(CompanyName)].PrivateKey, Rec.DictKeys[RecluiterName][Rec.Dict[RecluiterName].IndexOf(CompanyName)].PublicKey);
+                MessageBox.Show("Encryption: " + encryptedData);
+                MessageBox.Show("Decryption: " + decryptedData);
+
+                if (keyword == decryptedData.ToString())
+                    groupBox1.Enabled = true;
+                else
+                    groupBox1.Enabled = false;
+            }
+            catch
+            {
+                MessageBox.Show("Unvalid input data");
+            }
+            
+            
+            
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = false;
+            comboBox2.Items.Clear();
+            foreach(string company in Rec.Dict[comboBox1.Text])
+            {
+                comboBox2.Items.Add(company);
+            }
+        }
+
+        private void comboBox2_TextChanged(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = false;
         }
     }
 }
