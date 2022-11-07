@@ -19,6 +19,8 @@ namespace TalentHubLab1
         public string Address { get; set; }
         public string[] Companies { get; set; }
 
+        public string Recluiter { get; set; } 
+
         [NonSerialized]
 
         public Dictionary<string, HuffmanTree> CompanyApplicantInfo = new Dictionary<string, HuffmanTree>();

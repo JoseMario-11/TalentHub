@@ -13,11 +13,13 @@ namespace TalentHubLab1.AVL
             Root = null;
             nodeCount = 0;
             NodeList = new List<Applicant>();
+            AllApplicantList = new List<Applicant>();
         }
 
         public Node Root;
         public int nodeCount;
         public List<Applicant> NodeList;
+        public List<Applicant> AllApplicantList;
 
         public Node Insert(Node root, Applicant element)
         {
@@ -239,6 +241,17 @@ namespace TalentHubLab1.AVL
                 NodeList.Add(root.element);
             }
             InorderSearch(root.right, name);
+        }
+
+        public void getAll(Node root)
+        {
+            if (root == null)
+                return;
+            if (root.left != null)
+                getAll(root.left);
+            AllApplicantList.Add(root.element);
+            if (root.right != null) 
+                getAll(root.right);
         }
 
         public Applicant SearchByDPI(Node root,  string DPI)
